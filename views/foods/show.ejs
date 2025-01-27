@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show page</title>
+  </head>
+  <body>
+    <%- include('../partials/_navBar.ejs') %>
+    <h1>Here is your <%=food.name%></h1>
+    <p>Add more info about food later!</p>
+    <a href="/users/<%= user._id %>/foods/<%= food._id %>/edit"
+      >Edit your food</a
+    >
+    <form
+      action="/users/<%=user._id%>/foods/<%=food._id%>?_method=DELETE"
+      method="POST"
+    >
+      <button type="submit">Throw Out <%=food.name%></button>
+    </form>
+  </body>
+</html>

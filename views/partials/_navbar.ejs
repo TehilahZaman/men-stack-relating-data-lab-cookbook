@@ -1,0 +1,14 @@
+<nav>
+  <a href="/">Home</a>
+
+  <% if (user){ %>
+  <a href="/users/<%=user._id%>/foods">View Pantry</a>
+  <a href="/auth/sign-out">Sign Out</a>
+  <a href="/users/<%= user._id%>/foods/new %>">Add food</a>
+  <a href="/users/">Explore the community?</a>
+  <!-- i beleive it's working it just has blank bullet points rn for users -->
+  <% } else { %>
+  <a href="/auth/sign-in">Sign in</a>
+  <a href="/auth/sign-up">Sign Up</a>
+  <% } %>
+</nav>
